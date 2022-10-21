@@ -46,7 +46,7 @@ TELEM TBitField::GetMemMask(const int n) const // битовая маска дл
 
 	if ((n < 0) || (n >= BitLen))
 	throw "incorrect data";
-	return 1 << (n % (8 * sizeof(TELEM)-1));
+	return 1 << n;
 
 }
 
@@ -155,16 +155,21 @@ TBitField TBitField::operator&(const TBitField &bf) // операция "и"
 TBitField TBitField::operator~(void) // отрицание
 {
 
-	int len = BitLen;
-	TBitField temp(len);
-	for (int i = 0; i < BitLen; i++)
-		if (GetBit(i) == 0)
-			temp.SetBit(i);
-		else
-			temp.ClrBit(i);
+	TBitField temp(BitLen);
+	for (int i = 0; i < MemLen; i++) {
+
+		temp.pMem[i] = ~pMem[i];
+	}
+	
+	int a = BitLen - (MemLen - 1) * (sizeof(TELEM) * 8);
+	*this = temp;
+
+	if (a < sizeof(TELEM) * 8)
+	{
+		int mask = (1 << (a)) - 1;
+		temp.pMem[MemLen - 1] &= mask;
+	}
 	return temp;
-
-
 }
 
 // ввод/вывод
