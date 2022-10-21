@@ -1,0 +1,6 @@
+C:/Users/stud2020/Desktop/prob/mp2-lab1-set/sln/CMakeFiles/ALL_BUILD.dir
+C:/Users/stud2020/Desktop/prob/mp2-lab1-set/sln/CMakeFiles/ZERO_CHECK.dir
+C:/Users/stud2020/Desktop/prob/mp2-lab1-set/sln/src/CMakeFiles/set.dir
+C:/Users/stud2020/Desktop/prob/mp2-lab1-set/sln/samples/CMakeFiles/sample_prime_numbers.dir
+C:/Users/stud2020/Desktop/prob/mp2-lab1-set/sln/gtest/CMakeFiles/gtest.dir
+C:/Users/stud2020/Desktop/prob/mp2-lab1-set/sln/test/CMakeFiles/test_set.dir
